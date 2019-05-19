@@ -149,7 +149,10 @@ namespace RepositoryAnalyticsApi.Repositories
             {
                 var repository = await ReadAsync(repositoryId, asOf);
 
-                repositories.Add(repository);
+                if(repository != null)
+                {
+                    repositories.Add(repository);
+                }
             }
 
             return repositories;
